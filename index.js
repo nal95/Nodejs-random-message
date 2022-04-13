@@ -2,8 +2,10 @@ const express = require('express');
 const Str = require('@supercharge/strings');
 const app = express();
 const server = require('http').createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+const  io  = require("socket.io")(server, {
+    cors: {origin: '*',}
+});;
+//const io = new Server(server);
 const port = 9898;
 
 
